@@ -40,7 +40,7 @@ io.on("connection", (socket) => {
     io.to(roomId).emit("chatRoomMsg", createMessage);
   });
 });
-
-server.listen(4002, () => {
-  console.log("http://localhost:4002");
+const PORT = process.env.PORT || 4002;
+server.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
